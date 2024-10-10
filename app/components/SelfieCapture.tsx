@@ -1,20 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface SelfieCaptureProps {
-  onCapture: (image: string) => void;
+  onCapture: (image: string, squarePos: { top: number; left: number }) => void; // Expect two arguments
 }
 
 const SelfieCapture: React.FC<SelfieCaptureProps> = ({ onCapture }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [squarePos, setSquarePos] = useState<{ top: number; left: number }>({ top: 30, left: 30 });
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function getCameraStream() {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
       }
     }
+
+    // Function to randomly move the square every 1 second
+    const moveSquareRandomly = () => {
+      setInterval(() => {
+        const randomTop = Math.floor(Math.random() * 60);  // Limit top value to 60% to avoid overlap
+        const randomLeft = Math.floor(Math.random() * 80); // Random value between 0 and 80 for left
+        setSquarePos({ top: randomTop, left: randomLeft });
+      }, 1000); // Moves every 1 second
+    };
+
     getCameraStream();
+    moveSquareRandomly(); // Start moving the square
   }, []);
 
   const captureImage = () => {
@@ -26,7 +38,9 @@ const SelfieCapture: React.FC<SelfieCaptureProps> = ({ onCapture }) => {
       const ctx = canvas.getContext('2d');
       ctx?.drawImage(video, 0, 0, canvas.width, canvas.height);
       const imageSrc = canvas.toDataURL('image/png');
-      onCapture(imageSrc); // Call the parent to set the captured image
+
+      // Pass both imageSrc and squarePos to the onCapture function
+      onCapture(imageSrc, squarePos);
     }
   };
 
@@ -35,6 +49,17 @@ const SelfieCapture: React.FC<SelfieCaptureProps> = ({ onCapture }) => {
       <h2 className="text-white text-lg mb-4">Take Selfie</h2>
       <div className="relative">
         <video ref={videoRef} autoPlay className="w-full h-64 bg-gray-300"></video>
+
+        {/* Square-shaped area that moves randomly */}
+        <div
+          className="absolute border-2 border-white"
+          style={{
+            top: `${squarePos.top}%`,    // Use the dynamic top position
+            left: `${squarePos.left}%`,   // Use the dynamic left position
+            width: '20%',  // Fixed width of the square
+            height: '20%', // Fixed height of the square
+          }}
+        ></div>
       </div>
       <button onClick={captureImage} className="mt-4 bg-yellow-500 text-white py-2 px-4 rounded">
         Continue
