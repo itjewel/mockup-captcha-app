@@ -8,21 +8,21 @@ This project involves the creation of a custom CAPTCHA component that utilizes a
 
 Before starting this project, ensure that the following tools and technologies are set up:
 
-`Node.js`: Ensure Node.js (version 16 or higher) is installed to run the project.
+- `Node.js`: Ensure Node.js (version 16 or higher) is installed to run the project.
 
-`Next.js`: This project is built using Next.js, a React framework that supports server-side rendering (SSR) and static site generation (SSG). You should have experience with Next.js, including its pages or app directory structure, and concepts like API routes.
+- `Next.js`: This project is built using Next.js, a React framework that supports server-side rendering (SSR) and static site generation (SSG). You should have experience with Next.js, including its pages or app directory structure, and concepts like API routes.
 
-`Tailwind CSS`: Tailwind CSS will be used for styling the component. Install and configure Tailwind CSS in your project.
+- `Tailwind CSS`: Tailwind CSS will be used for styling the component. Install and configure Tailwind CSS in your project.
 
-`TypeScript`: TypeScript will be used for static typing. Ensure that TypeScript is installed and properly configured in your project.
+- `TypeScript`: TypeScript will be used for static typing. Ensure that TypeScript is installed and properly configured in your project.
 
-`Testing Libraries`:
-Jest: For writing unit and integration tests.
+- `Testing Libraries`:
+  Jest: For writing unit and integration tests.
 
-`React Testing Library`: For testing React components.
+- `React Testing Library`: For testing React components.
 
-`ts-jest`: Ensure Jest is configured with ts-jest for TypeScript compatibility.
-Web Camera Access: The navigator.mediaDevices.getUserMedia API is required to access the user's webcam.
+- `ts-jest`: Ensure Jest is configured with ts-jest for TypeScript compatibility.
+  Web Camera Access: The navigator.mediaDevices.getUserMedia API is required to access the user's webcam.
 
 # 3. Technical Approach
 
@@ -37,9 +37,9 @@ The CAPTCHA component follows the structure below:
 
 ## 3.2. Randomization Algorithm
 
-`Square Position`: The position of the square is randomized every 2 seconds using a timer inside SelfieCapture.tsx.
+- `Square Position`: The position of the square is randomized every 2 seconds using a timer inside SelfieCapture.tsx.
 
-`Watermark Randomization`: In ShapeSelection.tsx, random shapes and colors are assigned to half of the sectors using helper functions like getRandomShape and getRandomColor.
+- `Watermark Randomization`: In ShapeSelection.tsx, random shapes and colors are assigned to half of the sectors using helper functions like getRandomShape and getRandomColor.
 
 ## 3.3. Testing Strategy
 
