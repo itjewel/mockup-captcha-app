@@ -16,15 +16,15 @@ Before starting this project, ensure that the following tools and technologies a
 
 - `TypeScript`: TypeScript is used for static typing.
 
-  `Testing Libraries`:
+- `Testing Libraries`:
 
-> - `Jest`: For writing unit and integration tests.
+  > - `Jest`: For writing unit and integration tests.
 
-> - `React Testing Library`: For testing React components.
+  > - `React Testing Library`: For testing React components.
 
-> - `ts-jest`: Jest is configured with ts-jest for TypeScript compatibility.
+  > - `ts-jest`: Jest is configured with ts-jest for TypeScript compatibility.
 
-> - `Web Camera Access`: The `navigator.mediaDevices.getUserMedia` API is used to access the user's webcam.
+  > - `Web Camera Access`: The `navigator.mediaDevices.getUserMedia` API is used to access the user's webcam.
 
 # 3. Technical Approach
 
@@ -67,10 +67,11 @@ The CAPTCHA component follows the structure below:
 
   > - `Shape and Color Rendering Test`: Verifies that the correct shape and color are displayed and styled according to the props.
 
-  - `ShapeSelection Component`:
-    > - `Grid Rendering Test`: Verifies that the component renders a grid with exactly 16 sectors (buttons).
-    > - `Sector Selection Test`: Ensures that a sector gets highlighted when clicked.
-    > - `Validation Test`: Confirms that the onValidate function is called when the user validates their selection.
+- `ShapeSelection Component`:
+
+  > - `Grid Rendering Test`: Verifies that the component renders a grid with exactly 16 sectors (buttons).
+  > - `Sector Selection Test`: Ensures that a sector gets highlighted when clicked.
+  > - `Validation Test`: Confirms that the onValidate function is called when the user validates their selection.
 
 - `ShapeSector Component`:
 
@@ -87,26 +88,27 @@ The CAPTCHA component follows the structure below:
 
 ## 4.1. Clone the Repository:
 
-- ```sh
+```sh
   git clone https://github.com/itjewel/mockup-captcha-app
-  ```
+```
 
-- cd `mockup-captcha-app`
+cd `mockup-captcha-app`
 
 ## 4.2. Install Dependencies:
 
-- ```sh
-   npm install
-  ```
+```sh
+  npm install
+```
 
 ## 4.3. Run the Project:
 
 After install project, use the following command to start the development server:
 
-- ```sh
-      npm run dev
-  ```
-  The application will run on [http://localhost:3000](http://localhost:3000).
+```sh
+     npm run dev
+```
+
+The application will run on [http://localhost:3000](http://localhost:3000).
 
 ## 4.4. Run Tests:
 
