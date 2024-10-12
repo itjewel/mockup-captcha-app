@@ -8,6 +8,7 @@ This project involves the creation of a custom CAPTCHA component that utilizes a
 
 Before starting this project, ensure that the following tools and technologies are set up:
 
+<sub>
 - `Node.js`: Need to Node.js (version 16 or higher) is installed to run the project.
 
 - `Next.js`: This project is built using Next.js, a React framework.
@@ -15,8 +16,12 @@ Before starting this project, ensure that the following tools and technologies a
 - `Tailwind CSS`: Tailwind CSS used for styling the component.
 
 - `TypeScript`: TypeScript is used for static typing.
+  </sub>
 
-- `Testing Libraries`:
+  `Testing Libraries`:
+
+    <sub>
+
 - `Jest`: For writing unit and integration tests.
 
 - `React Testing Library`: For testing React components.
@@ -24,6 +29,7 @@ Before starting this project, ensure that the following tools and technologies a
 - `ts-jest`: Jest is configured with ts-jest for TypeScript compatibility.
 
 - `Web Camera Access`: The `navigator.mediaDevices.getUserMedia` API is used to access the user's webcam.
+  </sub>
 
 # 3. Technical Approach
 
@@ -47,34 +53,53 @@ The CAPTCHA component follows the structure below:
 `Test Coverage`:
 
 - `Home Page`
-  -- `Mocking`: Mocks the Captcha component using jest.mock to verify that the Captcha component is rendered within the Home page.
-  -- `Test`: Confirms that the mocked Captcha component is rendered by checking for the presence of "Mock Captcha" in the document
+  <sub>
+
+  - `Mocking`: Mocks the Captcha component using jest.mock to verify that the Captcha component is rendered within the Home page.
+  - `Test`: Confirms that the mocked Captcha component is rendered by checking for the presence of "Mock Captcha" in the document
+    </sub>
 
 - `Captcha Component`:
-  -- `Initial Render Test`: Ensures the "Take Selfie" button is displayed when the component is first rendered.
-  -- `Mocking Media Devices`: Mocks navigator.mediaDevices.getUserMedia for the test environment.
+
+  <sub>
+  - `Initial Render Test`: Ensures the "Take Selfie" button is displayed when the component is first rendered.
+  - `Mocking Media Devices`: Mocks navigator.mediaDevices.getUserMedia for the test environment.
+    </sub>
 
 - `SelfieCapture Component`:
-  -- `Video Element`: Ensures the video element renders.
-  -- `Square Movement`: Verifies the square moves randomly every 2 seconds.
-  -- `Image Capture`: Confirms image capture and the correct call to onCapture.
+
+  <sub>
+    - `Video Element`: Ensures the video element renders.
+    - `Square Movement`: Verifies the square moves randomly every 2 seconds.
+    - `Image Capture`: Confirms image capture and the correct call to onCapture.
+  <sub>
 
 - `ShapeSelectionHeader Component`:
-  -- `Shape and Color Rendering Test`: Verifies that the correct shape and color are displayed and styled according to the props.
+
+  <sub>
+  - `Shape and Color Rendering Test`: Verifies that the correct shape and color are displayed and styled according to the props.
+    </sub>
 
 - `ShapeSelection Component`:
-  -- `Grid Rendering Test`: Verifies that the component renders a grid with exactly 16 sectors (buttons).
-  -- `Sector Selection Test`: Ensures that a sector gets highlighted when clicked.
-  -- `Validation Test`: Confirms that the onValidate function is called when the user validates their selection.
+
+  <sub>
+  - `Grid Rendering Test`: Verifies that the component renders a grid with exactly 16 sectors (buttons).
+  - `Sector Selection Test`: Ensures that a sector gets highlighted when clicked.
+  - `Validation Test`: Confirms that the onValidate function is called when the user validates their selection.
+    </sub>
 
   - `ShapeSector Component`:
-    -- `Shape Rendering`: Ensures triangle, circle, and square shapes are rendered correctly.
-    -- `Click Handler`: Verifies handleSectorClick is called when a sector is clicked.
-    -- `Selection Styling`: Checks if the selected sector is styled with the correct class.
+    <sub>
+    - `Shape Rendering`: Ensures triangle, circle, and square shapes are rendered correctly.
+    - `Click Handler`: Verifies handleSectorClick is called when a sector is clicked.
+    - `Selection Styling`: Checks if the selected sector is styled with the correct class.
+      </sub>
 
 - `ValidationResult Component`:
-  -- `Validation Messages`: Tests the display of "Validation Passed!" or "Validation Failed!" based on the isValidated prop.
-  -- `Retry Button`: Ensures clicking the "Retry" button reloads the page.
+  <sub>
+  - `Validation Messages`: Tests the display of "Validation Passed!" or "Validation Failed!" based on the isValidated prop.
+  - `Retry Button`: Ensures clicking the "Retry" button reloads the page.
+    </sub>
 
 # 4. Setup and Installation
 
