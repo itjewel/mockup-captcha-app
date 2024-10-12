@@ -1,3 +1,5 @@
+import React from 'react'; // Add this import if it's missing
+
 interface ValidationResultProps {
   isValidated: boolean;
 }

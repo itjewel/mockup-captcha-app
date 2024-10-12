@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Project Documentation for Custom CAPTCHA Component
 
-## Getting Started
+# 1. Project Overview
 
-First, run the development server:
+This project involves the creation of a custom CAPTCHA component that utilizes a selfie video stream, a moving square area, and a puzzle-based validation system. The goal is to differentiate between human users and bots by asking users to select sectors containing specific shapes and colors. The project also includes automated tests for some parts of the functionality.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 2. Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Before starting this project, ensure that the following tools and technologies are set up:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`Node.js`: Ensure Node.js (version 16 or higher) is installed to run the project.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`Next.js`: This project is built using Next.js, a React framework that supports server-side rendering (SSR) and static site generation (SSG). You should have experience with Next.js, including its pages or app directory structure, and concepts like API routes.
 
-## Learn More
+`Tailwind CSS`: Tailwind CSS will be used for styling the component. Install and configure Tailwind CSS in your project.
 
-To learn more about Next.js, take a look at the following resources:
+`TypeScript`: TypeScript will be used for static typing. Ensure that TypeScript is installed and properly configured in your project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`Testing Libraries`:
+Jest: For writing unit and integration tests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`React Testing Library`: For testing React components.
 
-## Deploy on Vercel
+`ts-jest`: Ensure Jest is configured with ts-jest for TypeScript compatibility.
+Web Camera Access: The navigator.mediaDevices.getUserMedia API is required to access the user's webcam.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 3. Technical Approach
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 3.1. Component Structure
+
+The CAPTCHA component follows the structure below:
+
+- `app/captcha/Captcha.tsx`: The main component handling the steps of the CAPTCHA process.
+- `app/captcha/SelfieCapture.tsx`: The component responsible for capturing the selfie and the square area.
+- `app/captcha/ShapeSelection.tsx`: The component where the user selects the shapes from the watermarked sectors.
+- `app/captcha/ValidationResult.tsx`: The result screen showing whether the user passed or failed the validation.
+
+## 3.2. Randomization Algorithm
+
+`Square Position`: The position of the square is randomized every 2 seconds using a timer inside SelfieCapture.tsx.
+
+`Watermark Randomization`: In ShapeSelection.tsx, random shapes and colors are assigned to half of the sectors using helper functions like getRandomShape and getRandomColor.
+
+## 3.3. Testing Strategy
+
+`Test Coverage`:
+Unit tests for randomization functions (e.g., getRandomShape, getRandomColor).
+Component rendering tests, including verifying interactions like button clicks.
+Tests for correct display of shapes and validation logic in ValidationResult.tsx.
+
+# 4. Setup and Installation
+
+## 4.1. Clone the Repository:
+
+- git clone https://github.com/itjewel/mockup-captcha-app
+- cd mockup-captcha-app
+
+## 4.2. Install Dependencies:
+
+`npm install `
+
+## 4.3. Run the Project:
+
+Since this project uses Next.js, use the following command to start the development server:
+
+`npm run dev`
+The application will run on [http://localhost:3000](http://localhost:3000).
+
+## 4.4. Run Tests:
+
+To execute the Jest test suite:
+
+``npm test`
+
+# 5. Usage Instructions
+
+`Start the CAPTCHA Component`: The Captcha.tsx component initializes the validation process. It first presents the selfie camera and moving square, followed by the shape selection puzzle.
+
+`Customization`: You can adjust the randomization logic for both the square movement and the shape/color selections by modifying the getRandomShape, getRandomColor, and moveSquareRandomly functions.
+
+`Retry Mechanism`: Upon failure, users can retry the CAPTCHA puzzle, and the logic for reducing mistake tolerance can be found in the ValidationResult.tsx component. 6. Potential Improvements
+
+`Advanced Security`: Consider adding time-based tokens or CAPTCHA solving time limits to prevent automated attempts.
+
+`User Experience`: Enhance the UI/UX with animations, clearer feedback for errors, and more detailed instructions for first-time users.

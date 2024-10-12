@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ShapeSelectionHeader from './ShapeSelectionHeader';
 import ShapeSector from './ShapeSector';
-
-type Shape = '△' | '◯' | '□'; 
+// Assain 3 shape
+type Shape = '△' | '◯' | '□';
 
 interface ShapeSelectionProps {
   capturedImage: string;
-  selectedShape: Shape; 
+  selectedShape: Shape;
   selectedColor: string;
   squarePosition: { top: number; left: number };
   onValidate: (isValid: boolean) => void;
@@ -25,29 +25,24 @@ const ShapeSelection: React.FC<ShapeSelectionProps> = ({
     randomizeWatermarkedSectors();
   }, []);
 
-  // Define specific colors for each shape type
   const shapeColorMap: Record<Shape, string> = {
-    '△': 'red',   
-    '◯': 'green', 
-    '□': 'blue',   
+    '△': 'red',
+    '◯': 'green',
+    '□': 'blue',
   };
 
-  const selectedColor = shapeColorMap[selectedShape];  
-
   const randomizeWatermarkedSectors = () => {
-    const shapes: Shape[] = ['△', '◯', '□'];  
-
-    // Randomly fill some sectors with shapes (leave some sectors empty)
-    const sectorsWithShapes: { idx: number; shape: Shape; color: string }[] = Array.from({ length: 16 }).map((_, idx) => {
-      const fillShape = Math.random() < 0.5;  
+    const shapes: Shape[] = ['△', '◯', '□'];
+    const sectorsWithShapes = Array.from({ length: 16 }).map((_, idx) => {
+      const fillShape = Math.random() < 0.5;
       if (fillShape) {
-        const shape: Shape = shapes[Math.floor(Math.random() * shapes.length)]; 
-        return { idx, shape, color: shapeColorMap[shape] };  
+        const shape: Shape = shapes[Math.floor(Math.random() * shapes.length)];
+        return { idx, shape, color: shapeColorMap[shape] };
       }
-      return { idx, shape: '' as Shape, color: '' }; 
+      return { idx, shape: '' as Shape, color: '' };
     });
 
-    setWatermarkedSectors(sectorsWithShapes); 
+    setWatermarkedSectors(sectorsWithShapes);
   };
 
   const handleSectorClick = (idx: number) => {
@@ -58,7 +53,7 @@ const ShapeSelection: React.FC<ShapeSelectionProps> = ({
 
   const validateSelection = () => {
     const correctSectors = watermarkedSectors
-      .filter((sector) => sector.shape === selectedShape && sector.color === selectedColor)  
+      .filter((sector) => sector.shape === selectedShape)
       .map((sector) => sector.idx);
 
     const isCorrect =
@@ -70,42 +65,35 @@ const ShapeSelection: React.FC<ShapeSelectionProps> = ({
 
   return (
     <>
-      <ShapeSelectionHeader selectedShape={selectedShape} selectedColor={selectedColor} />
+      <ShapeSelectionHeader selectedShape={selectedShape} selectedColor={shapeColorMap[selectedShape]} />
       <div className="relative flex justify-center items-center">
-        {/* Display the captured selfie */}
         <img src={capturedImage} alt="Captured Selfie" className="w-full h-64 object-cover" />
-
-        {/* Align the selection grid to the squarePosition */}
         <div
           className="absolute border-2 bg-slate-100 bg-opacity-50 rounded-lg"
           style={{
-            top: `${squarePosition.top}%`,   
-            left: `${squarePosition.left}%`, 
-            width: '45%',                    
-            height: '45%',                  
+            top: `${squarePosition.top}%`,
+            left: `${squarePosition.left}%`,
+            width: '45%',
+            height: '45%',
           }}
         >
-          {/* Grid layout for sectors */}
           <div className="grid grid-cols-4 grid-rows-4 gap-2 w-full h-full p-1">
-          {Array.from({ length: 16 }).map((_, idx) => {
-    const sector = watermarkedSectors.find((sector) => sector.idx === idx);
-
-    if (!sector) return null;
-      return (
-            <ShapeSector
-              key={sector.idx}
-              idx={sector.idx}
-              sector={sector}
-              userSelections={userSelections}
-              handleSectorClick={handleSectorClick}
-            />
-            );
-        })}
+            {Array.from({ length: 16 }).map((_, idx) => {
+              const sector = watermarkedSectors.find((sector) => sector.idx === idx);
+              if (!sector) return null;
+              return (
+                <ShapeSector
+                  key={sector.idx}
+                  idx={sector.idx}
+                  sector={sector}
+                  userSelections={userSelections}
+                  handleSectorClick={handleSectorClick}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
-
-      {/* Validate button */}
       <button onClick={validateSelection} className="mt-4 bg-yellow-500 text-white py-2 px-4 rounded">
         Validate
       </button>

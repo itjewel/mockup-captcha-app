@@ -3,32 +3,31 @@ import SelfieCapture from './SelfieCapture';
 import ShapeSelection from './ShapeSelection';
 import ValidationResult from './ValidationResult';
 
-type Shape = '△' | '◯' | '□';  // Define valid shape types
+type Shape = '△' | '◯' | '□';  
 
 const Captcha: React.FC = () => {
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
   const [isValidated, setIsValidated] = useState<boolean | null>(null); // null = not validated, true = passed, false = failed
-  const [selectedShape, setSelectedShape] = useState<Shape>('△'); // Shape for validation
-  const [selectedColor, setSelectedColor] = useState<string>('red'); // Color for validation
+  const [selectedShape, setSelectedShape] = useState<Shape>('△'); 
+  const [selectedColor, setSelectedColor] = useState<string>('red');
   const [squarePosition, setSquarePosition] = useState<{ top: number; left: number } | null>(null);
 
-  // Handle when selfie is captured
   const handleSelfieCaptured = (image: string, squarePos: { top: number; left: number }) => {
     setCapturedImage(image);
-    setSquarePosition(squarePos);  // Ensure square position is captured here
+    setSquarePosition(squarePos);  
     setSelectedShape(getRandomShape());
-    setSelectedColor(getRandomColor()); // Generate random color
+    setSelectedColor(getRandomColor()); 
   };
 
-  // Random shape generator
+  // Random shape generator here
   const getRandomShape = (): Shape => {
-    const shapes: Shape[] = ['△', '◯', '□'];  // Triangle, Circle, Square
+    const shapes: Shape[] = ['△', '◯', '□'];  
     return shapes[Math.floor(Math.random() * shapes.length)];
   };
 
-  // Random color generator
+  // Random color generator here
   const getRandomColor = () => {
-    const colors = ['red', 'green', 'blue'];  // Red, Green, Blue
+    const colors = ['red', 'green', 'blue']; 
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
@@ -41,8 +40,8 @@ const Captcha: React.FC = () => {
           <ShapeSelection
             capturedImage={capturedImage}
             selectedShape={selectedShape}
-            selectedColor={selectedColor} // Pass the color to ShapeSelection
-            squarePosition={squarePosition!}  // Ensure square position is passed here
+            selectedColor={selectedColor} 
+            squarePosition={squarePosition!}  
             onValidate={setIsValidated}
           />
         ) : (
