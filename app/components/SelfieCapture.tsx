@@ -16,14 +16,15 @@ const SelfieCapture: React.FC<SelfieCaptureProps> = ({ onCapture }) => {
       }
     }
 
-    // Function to randomly move the square every 1 second
+    // Function to randomly move the square every 2 second
     const moveSquareRandomly = () => {
       setInterval(() => {
-        const randomTop = Math.floor(Math.random() * 60);  // Limit top value to 60% to avoid overlap
-        const randomLeft = Math.floor(Math.random() * 80); // Random value between 0 and 80 for left
+        const randomTop = Math.floor(Math.random() * 56);  
+        const randomLeft = Math.floor(Math.random() * 56); 
         setSquarePos({ top: randomTop, left: randomLeft });
-      }, 1000); // Moves every 1 second
+      }, 2000); // Moves every 2 second
     };
+    
 
     getCameraStream();
     moveSquareRandomly(); // Start moving the square
