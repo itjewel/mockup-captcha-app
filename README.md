@@ -87,22 +87,14 @@ The CAPTCHA component follows the structure below:
   > - `Validation Messages`: Tests the display of "Validation Passed!" or "Validation Failed!" based on the isValidated prop.
   > - `Retry Button`: Ensures clicking the "Retry" button reloads the page.
 
-# 3.4. Accessibility Considerations
+## 3.4. Accessibility Considerations
 
 - The CAPTCHA component has been built to ensure accessibility for all users:
   - **Keyboard Navigation**: Users can navigate and interact with the square and sector selections using the keyboard.
   - **Screen Reader Support**: Labels for buttons, shapes, and sectors are included to ensure users with screen readers can participate in the CAPTCHA process.
   - **Color Blindness**: For Task 2 (optional), ensure that the CAPTCHA provides alternative ways to distinguish between sectors beyond color (like patterns or tooltips).
 
-# 3.5. Security Considerations
-
-To protect the CAPTCHA from being bypassed by automated tools:
-
-- **Time Limits**: Consider implementing a time limit for CAPTCHA completion to prevent automation.
-- **Token Validation**: Use server-side token generation and validation to ensure CAPTCHA requests are legitimate.
-- **Image Obfuscation**: CAPTCHA images are obfuscated by adding random noise or slight blurring to make image recognition difficult.
-
-# 3.6. Error Handling
+## 3.5. Error Handling
 
 The component accounts for several potential issues:
 
