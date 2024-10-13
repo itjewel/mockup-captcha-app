@@ -81,8 +81,8 @@ The CAPTCHA component follows the structure below:
 
 - `ValidationResult Component`:
 
-> - `Validation Messages`: Tests the display of "Validation Passed!" or "Validation Failed!" based on the isValidated prop.
-> - `Retry Button`: Ensures clicking the "Retry" button reloads the page.
+  > - `Validation Messages`: Tests the display of "Validation Passed!" or "Validation Failed!" based on the isValidated prop.
+  > - `Retry Button`: Ensures clicking the "Retry" button reloads the page.
 
 # 4. Setup and Installation
 
@@ -131,3 +131,26 @@ To execute the Jest test suite:
 `Advanced Security`: Consider adding time-based tokens or CAPTCHA solving time limits to prevent automated attempts.
 
 `User Experience`: Enhance the UI/UX with animations, clearer feedback for errors, and more detailed instructions for first-time users.
+
+# 7. Preview Pages
+
+## Video Streaming
+
+Here is a preview of the Home Page for video streaming feature:
+
+![Video streaming](https://github.com/itjewel/news-aggregator/blob/main/screenshort/video.png)
+
+## Preview of Shape & Capture
+
+Here is a preview of the Shape & Capture:
+
+![Shape & Capture](https://github.com/itjewel/news-aggregator/blob/main/screenshort/shape.png)
+
+## Preview of Validation Pass or Fail
+
+Here is a preview of the validation pass:
+
+![Validation Pass](https://github.com/itjewel/news-aggregator/blob/main/screenshort/pass.png)
+
+Here is a preview of the validation fail:
+![Validation Fail](https://github.com/itjewel/news-aggregator/blob/main/screenshort/fail.png)
