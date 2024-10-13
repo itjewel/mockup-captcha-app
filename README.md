@@ -153,29 +153,22 @@ To execute the Jest test suite:
 
 # 7. Potential Improvements
 
-`Advanced Security`: Consider adding time-based tokens or CAPTCHA solving time limits to prevent automated attempts.
+- **Advanced Security**: Consider adding time-based tokens or CAPTCHA solving time limits to prevent automated attempts.
 
-`User Experience`: Enhance the UI/UX with animations, clearer feedback for errors, and more detailed instructions for first-time users.
+- **User Experience**: Enhance the UI/UX with animations, clearer feedback for errors, and more detailed instructions for first-time users.
 
 # 8. Preview Pages
 
 ## Video Streaming
 
-Here is a preview of the Home Page for video streaming feature:
-
 ![Video streaming](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/video.png)
 
 ## Preview of Shape & Capture
-
-Here is a preview of the Shape & Capture:
 
 ![Shape & Capture](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/shape.png)
 
 ## Preview of Validation Pass or Fail
 
-Here is a preview of the validation pass:
-
 ![Validation Pass](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/pass.png)
 
-Here is a preview of the validation fail:
 ![Validation Fail](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/fail.png)
