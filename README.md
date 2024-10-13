@@ -32,10 +32,12 @@ Before starting this project, ensure that the following tools and technologies a
 
 The CAPTCHA component follows the structure below:
 
-- `app/captcha/Captcha.tsx`: The main component handling the steps of the CAPTCHA process.
-- `app/captcha/SelfieCapture.tsx`: The component responsible for capturing the selfie and the square area.
-- `app/captcha/ShapeSelection.tsx`: The component where the user selects the shapes from the watermarked sectors.
-- `app/captcha/ValidationResult.tsx`: The result screen showing whether the user passed or failed the validation.
+- `app/components/Captcha.tsx`: The main component handling the steps of the CAPTCHA process.
+- `app/components/SelfieCapture.tsx`: The component responsible for capturing the selfie and the square area.
+- `app/components/ShapeSelection.tsx`: The component where the user selects the shapes from the watermarked sectors.
+- `app/components/ShapeSector.tsx`: This component allows the user to select specific shapes from the watermarked sectors. It is a subcomponent of `ShapeSelection`.
+- `app/components/ShapeSelectionHeader.tsx`:This component displays the selected shape symbol and color at the top of the header. It is also a subcomponent of `ShapeSelection`.
+- `app/components/ValidationResult.tsx`: The result screen showing whether the user passed or failed the validation.
 
 ## 3.2. Randomization Algorithm
 
