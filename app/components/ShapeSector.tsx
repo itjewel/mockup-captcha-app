@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Define the type for the possible shapes used in the grid
 type Shape = '△' | '◯' | '□';
 
 // Define the props that the ShapeSector component will receive

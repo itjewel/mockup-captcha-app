@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react'; 
 import SelfieCapture from '../../components/SelfieCapture';
 
-// Mock the getUserMedia API before running any tests
 beforeAll(() => {
   Object.defineProperty(global.navigator, 'mediaDevices', {
     value: {

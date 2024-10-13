@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react'; 
 import ShapeSector from '../ShapeSector';
 
-// Define the test suite for the ShapeSector component
 describe('ShapeSector Component', () => {
   // Create a mock function to simulate handleSectorClick behavior
   const handleSectorClick = jest.fn();

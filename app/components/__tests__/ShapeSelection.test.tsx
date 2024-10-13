@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ShapeSelection from '../../components/ShapeSelection'; 
 
-// Define a test suite for the ShapeSelection component
 describe('ShapeSelection Component', () => {
   // Define the common props to be used across all tests
   const props = {

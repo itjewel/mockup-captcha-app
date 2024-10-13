@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react'; // Import the testing utilities from React Testing Library
-import ShapeSelectionHeader from '../../components/ShapeSelectionHeader'; // Import the ShapeSelectionHeader component to be tested
+import { render, screen } from '@testing-library/react'; 
+import ShapeSelectionHeader from '../../components/ShapeSelectionHeader'; 
 
-// Define the test suite for the ShapeSelectionHeader component
 describe('ShapeSelectionHeader Component', () => {
   // Test case: Verify that the component renders the correct shape and color
   it('renders the correct shape and color', () => {

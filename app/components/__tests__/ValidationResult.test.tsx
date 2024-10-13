@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react'; 
 import ValidationResult from '../../components/ValidationResult'; 
 
-// Define the test suite for the ValidationResult component
 describe('ValidationResult Component', () => {
   
   // Test case 1: Check if the "Validation Passed!" message is rendered when isValidated is true

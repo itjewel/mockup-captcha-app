@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// Define the interface for the props that the SelfieCapture component will accept
 interface SelfieCaptureProps {
   // onCapture is a callback function that will receive the captured image and square position
   onCapture: (image: string, squarePos: { top: number; left: number }) => void;

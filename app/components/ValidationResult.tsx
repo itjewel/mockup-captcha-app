@@ -1,6 +1,5 @@
-import React from 'react'; // Import React, necessary for defining a functional component
+import React from 'react';
 
-// Define the interface for the props that ValidationResult component will accept
 interface ValidationResultProps {
   isValidated: boolean; // A boolean to indicate whether the validation passed or failed
 }

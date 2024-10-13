@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ShapeSelectionHeader from './ShapeSelectionHeader';
 import ShapeSector from './ShapeSector';
 
-// Define a type for the shapes that will be used in the selection
 // The shape can either be a triangle (△), circle (◯), or square (□)
 type Shape = '△' | '◯' | '□';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Define the interface for the props that ShapeSelectionHeader will accept
 interface ShapeSelectionHeaderProps {
   selectedShape: string; // The shape selected by the user (e.g., △, ◯, □)
   selectedColor: string; // The color associated with the selected shape (e.g., red, green, blue)
