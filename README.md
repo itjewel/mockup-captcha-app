@@ -138,19 +138,19 @@ To execute the Jest test suite:
 
 Here is a preview of the Home Page for video streaming feature:
 
-![Video streaming](https://github.com/itjewel/news-aggregator/blob/main/screenshort/video.png)
+![Video streaming](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/video.png)
 
 ## Preview of Shape & Capture
 
 Here is a preview of the Shape & Capture:
 
-![Shape & Capture](https://github.com/itjewel/news-aggregator/blob/main/screenshort/shape.png)
+![Shape & Capture](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/shape.png)
 
 ## Preview of Validation Pass or Fail
 
 Here is a preview of the validation pass:
 
-![Validation Pass](https://github.com/itjewel/news-aggregator/blob/main/screenshort/pass.png)
+![Validation Pass](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/pass.png)
 
 Here is a preview of the validation fail:
-![Validation Fail](https://github.com/itjewel/news-aggregator/blob/main/screenshort/fail.png)
+![Validation Fail](https://github.com/itjewel/mockup-captcha-app/blob/main/screenshort/fail.png)
