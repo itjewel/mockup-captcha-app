@@ -43,7 +43,7 @@ The CAPTCHA component follows the structure below:
 
 - `Square Position`: The position of the square is randomized every 2 seconds using a timer inside `SelfieCapture.tsx`.
 
-- `Watermark Randomization`: In `ShapeSelection.tsx`, random shapes and colors are assigned to half of the sectors using helper functions like `getRandomShape` and `getRandomColor`.
+- `Watermark Randomization`: In `ShapeSelection.tsx`, random shapes and colors are assigned to half of the sectors using helper functions like `getRandomShape` and `getRandomColor`. both of which are created in the `Captcha.tsx` component.
 
 ## 3.3. Testing Strategy
 
