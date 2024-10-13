@@ -47,6 +47,9 @@ The CAPTCHA component follows the structure below:
 
 `Test Coverage`:
 
+- **Security Tests**: Unit tests have been written to verify that CAPTCHA attempts are secured by token validation.
+- **Retry Logic Tests**: Tests have been added to simulate multiple CAPTCHA retries, ensuring that mistake tolerance works as expected.
+
 - `Home Page`
 
   > - `Mocking`: Mocks the Captcha component using jest.mock to verify that the Captcha component is rendered within the Home page.
@@ -83,6 +86,29 @@ The CAPTCHA component follows the structure below:
 
   > - `Validation Messages`: Tests the display of "Validation Passed!" or "Validation Failed!" based on the isValidated prop.
   > - `Retry Button`: Ensures clicking the "Retry" button reloads the page.
+
+# 3.4. Accessibility Considerations
+
+- The CAPTCHA component has been built to ensure accessibility for all users:
+  - **Keyboard Navigation**: Users can navigate and interact with the square and sector selections using the keyboard.
+  - **Screen Reader Support**: Labels for buttons, shapes, and sectors are included to ensure users with screen readers can participate in the CAPTCHA process.
+  - **Color Blindness**: For Task 2 (optional), ensure that the CAPTCHA provides alternative ways to distinguish between sectors beyond color (like patterns or tooltips).
+
+# 3.5. Security Considerations
+
+To protect the CAPTCHA from being bypassed by automated tools:
+
+- **Time Limits**: Consider implementing a time limit for CAPTCHA completion to prevent automation.
+- **Token Validation**: Use server-side token generation and validation to ensure CAPTCHA requests are legitimate.
+- **Image Obfuscation**: CAPTCHA images are obfuscated by adding random noise or slight blurring to make image recognition difficult.
+
+# 3.6. Error Handling
+
+The component accounts for several potential issues:
+
+- **Webcam Access**: If webcam access is denied or not available, the user will be notified with an error message and instructed to enable it or retry.
+- **Network Errors**: In case of network issues during validation, the component will display a relevant error message and allow users to retry.
+- **Invalid CAPTCHA**: If the user makes an incorrect selection, they will be prompted to retry with decreasing tolerance levels.
 
 # 4. Setup and Installation
 
@@ -126,13 +152,18 @@ To execute the Jest test suite:
 
 `Retry Mechanism`: Upon failure, users can retry the CAPTCHA puzzle, and the logic for reducing mistake tolerance can be found in the `ValidationResult.tsx` component.
 
-# 6. Potential Improvements
+# 6. Feature Limitations
+
+- **Task 2 (Color Tinting)**: While the basic CAPTCHA works as required, we explored adding color tinting to the watermarks. However, due to limitations in the randomization logic and accessibility concerns, this feature remains under testing.
+- **Task 3 (User Error Workflow)**: The retry mechanism is implemented, but the tolerance level reduction is still under development. Additional error tracking will be added to dynamically adjust based on user errors.
+
+# 7. Potential Improvements
 
 `Advanced Security`: Consider adding time-based tokens or CAPTCHA solving time limits to prevent automated attempts.
 
 `User Experience`: Enhance the UI/UX with animations, clearer feedback for errors, and more detailed instructions for first-time users.
 
-# 7. Preview Pages
+# 8. Preview Pages
 
 ## Video Streaming
 
