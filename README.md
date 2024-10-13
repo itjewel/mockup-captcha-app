@@ -142,7 +142,7 @@ To execute the Jest test suite:
 
 - **Start the CAPTCHA Component**: The `Captcha.tsx` component initializes the validation process. It first presents the selfie camera and moving square, followed by the shape selection puzzle.
 
-- **Customization`: You can adjust the randomization logic for both the square movement and the shape/color selections by modifying the `getRandomShape**, `getRandomColor`, and `moveSquareRandomly` functions.
+- **Customization**: You can adjust the randomization logic for both the square movement and the shape/color selections by modifying the `getRandomShape`, `getRandomColor`, and `moveSquareRandomly` functions.
 
 - **Retry Mechanism**: Upon failure, users can retry the CAPTCHA puzzle, and the logic for reducing mistake tolerance can be found in the `ValidationResult.tsx` component.
 
